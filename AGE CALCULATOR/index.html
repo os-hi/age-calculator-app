@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+<body>
+
+  <main id="app">
+    <h1 class="appName">AGE CALCULATOR APP</h1>
+    <div class="container">
+      <form action="">
+        <div class="userInput">
+          <div class="conDay">
+            <label for="input-day" class="day" >DAY</label>
+            <input class="input-day" type="number" min="1" max="31" placeholder="DD" id="day" required>
+          </div>
+          <div class="conMonth">
+            <label for="input-month" class="month">MONTH</label>
+            <input type="number" placeholder="MM" id="month" min="1" max="12" required>
+          </div>
+          <div class="conYear">
+            <label for="input-year" class="year">YEAR</label>
+            <input type="number" placeholder="YYYY" id="year"  max="2023" required>
+          </div>
+          
+        </div>
+        <div class="buttonLine">
+          <hr>
+          <input type="button" value="" onclick="calculate()" id="submit">
+        </div>
+      </form>
+      <div class="result">
+        <h1><span id="resYear">--</span>years</h1>
+        <h1><span id="resMonth">--</span>months</h1>
+        <h1><span id="resDay">--</span>days</h1>
+      </div>
+    </div>
+  <script src="./script.js"></script>
+  </main>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jake Batucan</a>.
+  </div> -->
+</body>
+</html>
