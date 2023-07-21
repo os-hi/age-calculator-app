@@ -17,22 +17,28 @@
       <form action="">
         <div class="userInput">
           <div class="conDay">
-            <label for="input-day" class="day" >DAY</label>
-            <input class="input-day" type="number" min="1" max="31" placeholder="DD" id="day" required>
+            <label  for="input-day" id="d" >DAY</label>
+            <input class="input-day" type="number" min="1" max="31" placeholder="DD" id="day" onChange="validation()" required>
+            <label class="error" for="input-day" id="day-error">Invalid input</label>
+            <label for="input-day" class="empty" id="day-empty">This field is required</label>
           </div>
           <div class="conMonth">
-            <label for="input-month" class="month">MONTH</label>
-            <input type="number" placeholder="MM" id="month" min="1" max="12" required>
+            <label  for="input-month" id="m">MONTH</label>
+            <input type="number" placeholder="MM" id="month" min="1" max="12" onChange="validation()" required>
+            <label class="error" for="input-month" id="month-error">Invalid input</label>
+            <label for="input-day" class="empty" id="month-empty">This field is required</label>
           </div>
           <div class="conYear">
-            <label for="input-year" class="year">YEAR</label>
-            <input type="number" placeholder="YYYY" id="year"  max="2023" required>
+            <label  for="input-year" id="y">YEAR</label>
+            <input type="number" placeholder="YYYY" id="year"  max="2023" onChange="validation()" required>
+            <label class="error" for="input-year" id="year-error">Invalid input</label>
+            <label for="input-day" class="empty" id="year-empty">This field is required</label>
           </div>
           
         </div>
         <div class="buttonLine">
           <hr>
-          <input type="button" value="" onclick="calculate()" id="submit">
+          <input type="submit" value="" onclick="calculate()" id="submit">
         </div>
       </form>
       <div class="result">

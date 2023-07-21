@@ -1,3 +1,9 @@
+const errorDay = document.getElementById('day-error')
+const errorMonth = document.getElementById('month-error')
+const errorYear = document.getElementById('year-error')
+const emptyDay = document.getElementById('day-empty')
+const emptyMonth = document.getElementById('month-empty')
+const emptyYear = document.getElementById('year-empty')
 const inputDay = document.getElementById('day');
 const inputMonth = document.getElementById('month');
 const inputYear = document.getElementById('year');
@@ -9,6 +15,8 @@ const currentYear = 2023;
 const monthsInYear = 12;
 const currentMonth = 7;
 const currentDay = 22;
+const numDaysInMonth = [31,28,31,30,31,30, 31,31,30,31,30,31]
+
 
 function calculateInYear(){
     let calcYear = currentYear - inputYear.value
@@ -66,8 +74,50 @@ function calculateInMonth(){
         }
     }
 }
+function validation(){
+
+    if(inputDay.value > 31){
+        errorDay.classList.toggle("show")
+        event.preventDefault()
+    }
+    if (inputMonth.value > monthsInYear){
+        errorMonth.classList.toggle("show")
+        event.preventDefault()
+    }
+    if (inputYear.value > 2023){
+        errorYear.classList.toggle("show")
+        event.preventDefault()
+    }
+    
+}
 
 function calculate(){
-    calculateInYear();
-    calculateInMonth();
+    validation()
+    if(inputDay.value === ""){
+        emptyDay.classList.toggle("show")
+        event.preventDefault()
+    }
+    if(inputMonth.value === ""){
+        emptyMonth.classList.toggle("show")
+        event.preventDefault()
+    }
+    if(inputYear.value === "" ){
+        emptyYear.classList.toggle("show")
+        event.preventDefault()
+    }
+    
+    else if(inputDay.value <= numDaysInMonth[inputMonth.value-1]){
+        calculateInYear();
+        calculateInMonth();
+        event.preventDefault()
+    }
+    else if(inputDay.value > numDaysInMonth[inputMonth.value-1]){
+        errorDay.classList.toggle("show")
+        event.preventDefault()
+    }
+    // else{
+    //     errorDay.classList.toggle("show")
+    //     event.preventDefault()
+    // }
+
 }
