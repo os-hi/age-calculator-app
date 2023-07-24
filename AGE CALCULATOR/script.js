@@ -14,7 +14,7 @@ const resultDay = document.getElementById('resDay')
 const currentYear = 2023;
 const monthsInYear = 12;
 const currentMonth = 7;
-const currentDay = 22;
+const currentDay = 25;
 const numDaysInMonth = [31,28,31,30,31,30, 31,31,30,31,30,31]
 
 
@@ -40,7 +40,7 @@ function calculateInMonth(){
         }
         else{
             let totalDay = currentDay - inputDay.value
-            resultMonth.textContent = currentMonth - 1
+            resultMonth.textContent = 0
             resultDay.textContent = totalDay
         }
     }

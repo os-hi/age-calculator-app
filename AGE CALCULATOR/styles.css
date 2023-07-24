@@ -10,7 +10,7 @@
     background-color: hsl(259, 100%, 93%);
  }
 .appName{
-    margin-top: 10%;
+    position: relative;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
